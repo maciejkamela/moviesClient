@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist"></script>
-    <link rel="stylesheet" href="assets/_css/font-awesome.css">
-    <link href="assets/_css/style.css" rel="stylesheet" type="text/css"/>
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>-->
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css/"/>-->
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/js/bootstrap.min.js"/>-->
+    <!--<link rel="stylesheet" href="assets/_css/font-awesome.css">-->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link href="assets/_css/style.css" rel="stylesheet" type="text/css"/>
+    <!--<img src="assets/_images/avangers.jpg" alt="main posters"/>-->
     <title></title>
 </head>
 <body>
-<button type="button" class = "display-all-movies-btn"> Request data -jquery</button>
+<!--<button type="button" class = "display-all-movies-btn"> Request data -jquery</button>-->
 <!--<button type="button" onclick="loadDoc()"> Request data-js</button>-->
-
-<div class="content"></div>
-
+<!--<div class="content"></div>-->
+<div class="main-poster"></div>
+<header class="header">
+    <div class="main-menu">
+    <div class="page-title">Camel's <span>Movies</span></div>
+    <div class="menu-tabs">
+        <ul class="nav nav-tabs tabs">
+            <li class="active"><a data-toggle="tab" href="#movies-menu">Movies</a></li>
+            <li><a data-toggle="tab" href="#articles-menu">Articles</a></li>
+            <li><a data-toggle="tab" href="#trailers-menu">Trailers</a></li>
+        </ul>
+        <div class="tab-content main-menu-tabs-content">
+            <div id="movies-menu" class="tab-pane fade in active">
+                <h3>My movies</h3>
+                <p>Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+            </div>
+            <div id="articles-menu" class="tab-pane fade">
+                <h3>My articles</h3>
+                <p>Nunc facilisis leo at faucibus adipiscing.</p>
+            </div>
+            <div id="trailers-menu" class="tab-pane fade">
+                <h3>My trailers</h3>
+                <p>Nunc facilisis leo at faucibus adipiscing.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+<div class="poster-nav-arrow">
+<div class="glyphicon glyphicon-chevron-left poster-nav-left-arrow"></div>
+<div class="glyphicon glyphicon-chevron-right poster-nav-right-arrow"></div>
+</div>
 <script src="assets/js/apiCalls.js"></script>
 <script src="assets/js/mainView.js"></script>
 <script src="assets/js/init.js"></script>

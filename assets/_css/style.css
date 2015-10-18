@@ -63,108 +63,115 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: auto;
-    background: #CCCCB5;
     position: fixed;
     padding: 0;
     background-size: cover;
 }
 
-#header {
-    background: #939382;
-    color: white;
-    font-family: Roboto;
-    font-size: 30px;
-    border-bottom: ridge 2px;
-    border-color: #FFFFFF;
-    float: left;
-    width: 100%;
-    height: 150px;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
-
-}
-
-#header h3 {
-    margin-top: 30px;
-}
-
-#currentTime {
-    float: right;
-    color: white;
-    font-size: 20px;
-    box-sizing: border-box;
-    margin-right: 20px;
-}
-
-.main-container {
-    border: ridge #ACACAC 1px;
-    position: relative;
-    width: 60%;
-    min-height: 400px;
-    display: inline-block;
-    margin-top: 45px;
-    margin-bottom: 245px;
-    background-color: white;
-}
-
-.btn {
-    color: white;
-    padding: 7px;
-    border: none;
-    width: 80px;
-    font-size: 15px;
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity 0.3s linear;
-    border-radius: 1px;
-    position: relative;
-    top: 20%;
-}
-
-.run-game-btn {
-    background: red;
-}
-
-.new-game {
-    float: left;
-}
-
-.second-player-input {
-    display: none;
-}
-
-.game-board {
-    display: none;
-}
-
-.game-btn {
-    width: 100px;
+header {
+    background: #281919;
     height: 70px;
+    width: auto;
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
 }
 
-.game-row {
-    /*border: 1px solid black;*/
-    width: 30%;
-    padding: 3px;
-    margin: 0;
+.menu-tabs {
+    position: absolute;
+    right: 10px;
+    border: none;
+    width: 20%;
+
 }
 
-.start-new-game-btn {
-    width: 90px;
-    height: 50px;
+.tabs {
     border: none;
 }
-[data-state="X"]{
-    background: red;
+
+a {
+    color: grey;
+    font-size: 17px;
 }
-[data-state="O"]{
-    background: blue;
-}
-.game-btn.not-used {
-    background: lightgrey;
-}
-.game-player-name span {
-    font-size: 20px;
+
+.tabs li.active a {
+    background-color: #1C1309;
     color: white;
+    border-right: none;
+    border-left: none;
+    border-top: none;
 }
+
+.main-menu-tabs-content .active {
+    background-color: #1C1309;
+    color: white;
+    height: 120px;
+    width: 250px;
+    border: none;
+}
+
+.page-title {
+    position: absolute;
+    left: 0;
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.page-title span {
+    color: #FFD562;
+}
+.main-menu {
+    background: #353338;
+    position: relative;
+    z-index: 1;
+}
+.main-poster {
+    background-image: url("../_images/avangers.jpg");
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+.poster-nav-left-arrow {
+    left: 0;
+    position: relative;
+    color: red;
+    font-size: 50px;
+}
+.poster-nav-right-arrow {
+    right: 0;
+    position: relative;
+    color: red;
+    font-size: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
