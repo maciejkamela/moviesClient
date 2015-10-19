@@ -130,21 +130,23 @@ a {
 .main-poster {
     background-image: url("../_images/avangers.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     height: 500px;
     width: 100%;
     position: absolute;
     z-index: 0;
 }
 .poster-nav-left-arrow {
-    left: 0;
-    position: relative;
+    margin-top: 100px;
+    margin-top: 100px;
+    float: left;
     color: red;
     font-size: 50px;
 }
 .poster-nav-right-arrow {
-    right: 0;
-    position: relative;
-    color: red;
+    margin-top: 100px;
+    float: right;
+    color: #1C1309;
     font-size: 50px;
 }
 
