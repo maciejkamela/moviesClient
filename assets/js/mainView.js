@@ -15,6 +15,16 @@ app.mainView = (function () {
                 });
             }
         };
+    //var path = '../_images/';
+    var movies =[ 'avangers.jpg','carlitosway.jpg', 'godfather.jpg', 'scareface.jpg', 'serpico.jpg'];
+
+
+    nextMovie: function () {
+        currentIndex++;
+
+        el.css(background, path + movie[currentIndex]);
+
+    }
 
     }()
 );

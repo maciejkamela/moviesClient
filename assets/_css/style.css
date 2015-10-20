@@ -69,10 +69,9 @@ html, body {
 }
 
 header {
-    background: #281919;
+    background: rgba(35, 31, 31, 0.7);
     height: 70px;
     width: auto;
-    opacity: 0.7;
     position: relative;
     z-index: 1;
 }
@@ -82,32 +81,18 @@ header {
     right: 10px;
     border: none;
     width: 20%;
-
 }
 
-.tabs {
-    border: none;
+.tabs-menu-container {
+    background: rgba(89, 28, 28, 1.0);
 }
 
-a {
-    color: grey;
-    font-size: 17px;
+.dropdown-menu, .dropdown .open {
+    background: rgba(89, 28, 28, 1.0);
 }
 
-.tabs li.active a {
-    background-color: #1C1309;
-    color: white;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-}
-
-.main-menu-tabs-content .active {
-    background-color: #1C1309;
-    color: white;
-    height: 120px;
-    width: 250px;
-    border: none;
+.dropdown {
+    background: rgba(89, 28, 28, 1.0);
 }
 
 .page-title {
@@ -122,11 +107,7 @@ a {
 .page-title span {
     color: #FFD562;
 }
-.main-menu {
-    background: #353338;
-    position: relative;
-    z-index: 1;
-}
+
 .main-poster {
     background-image: url("../_images/avangers.jpg");
     background-size: cover;
@@ -136,6 +117,7 @@ a {
     position: absolute;
     z-index: 0;
 }
+
 .poster-nav-left-arrow {
     margin-top: 100px;
     margin-top: 100px;
@@ -143,6 +125,7 @@ a {
     color: red;
     font-size: 50px;
 }
+
 .poster-nav-right-arrow {
     margin-top: 100px;
     float: right;
