@@ -3,3 +3,4 @@
  */
 var app = app || {};
 app.mainView.init();
+app.headerSlider.init();

@@ -69,8 +69,8 @@ html, body {
 }
 
 header {
-    background: rgba(35, 31, 31, 0.7);
-    height: 70px;
+    background: rgba(50, 51, 56, 0.7);
+    height: 50px;
     width: auto;
     position: relative;
     z-index: 1;
@@ -84,28 +84,30 @@ header {
 }
 
 .tabs-menu-container {
-    background: rgba(89, 28, 28, 1.0);
+    background: rgba(76, 65, 69, 1.0);
 }
 
 .dropdown-menu, .dropdown .open {
-    background: rgba(89, 28, 28, 1.0);
+    background: rgba(76, 65, 69, 1.0);
 }
 
 .dropdown {
-    background: rgba(89, 28, 28, 1.0);
+    background: rgba(76, 65, 69, 1.0);
 }
-
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
 .page-title {
     position: absolute;
     left: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     color: white;
     font-size: 30px;
     margin-left: 10px;
 }
 
 .page-title span {
-    color: #FFD562;
+    color: #FDD564;
 }
 
 .main-poster {
@@ -117,20 +119,19 @@ header {
     position: absolute;
     z-index: 0;
 }
-
-.poster-nav-left-arrow {
+.poster-nav-arrow {
     margin-top: 100px;
-    margin-top: 100px;
-    float: left;
-    color: red;
+    color: rgba(234, 231, 231, 0.4);
     font-size: 50px;
+}
+.poster-nav-left-arrow {
+    float: left;
+    margin-left: 20px;
 }
 
 .poster-nav-right-arrow {
-    margin-top: 100px;
     float: right;
-    color: #1C1309;
-    font-size: 50px;
+    margin-right: 20px;
 }
 
 
