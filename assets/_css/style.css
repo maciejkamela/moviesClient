@@ -92,15 +92,14 @@ header {
 
 .dropdown-menu {
     box-shadow: 0px 14px 21px -7px rgba(0, 0, 0, .475);
-    border:none;
+    border: none;
 }
 
 .dropdown-menu, .dropdown .open {
     background: rgba(76, 65, 69, 1.0);
 }
 
-
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav > li > a {
     color: white;
 }
 
@@ -165,11 +164,13 @@ header {
     z-index: 0;
     box-sizing: border-box;
 }
+
 .poster-nav-arrow {
     margin-top: 100px;
     color: rgba(234, 231, 231, 0.4);
     font-size: 50px;
 }
+
 .poster-nav-left-arrow {
     float: left;
     margin-left: 20px;
@@ -179,7 +180,64 @@ header {
     float: right;
     margin-right: 20px;
 }
+.slider {
+    overflow: hidden;
+}
+.image-slider {
+    position: relative;
+    /*overflow: hidden;*/
+    height: 280px;
+    padding: 0;
+    left: 0;
+    display: none;
+}
 
+.image_slider li {
+    position: relative;
+    max-width: 100%;
+    float: left;
+    list-style: none;
+    left: 0;
+    /*overflow: hidden;*/
+}
+
+/*.slider > ul > li {*/
+    /*float: left;*/
+    /*width: 500px;*/
+    /*height: 444px;*/
+    /*margin-top: 0;*/
+    /*display: inline;*/
+/*}*/
+
+/*.slider > ul {*/
+/*position: relative;*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*}*/
+
+.clear {
+    clear: both;
+}
+
+.first-slider {
+    background: url("../_images/carlitosway.jpg") no-repeat;
+}
+
+.second-slider {
+    background: url("../_images/godfather.jpg") no-repeat;
+}
+
+.third-slider {
+    background: url("../_images/kamel.jpg") no-repeat;
+}
+
+.fourth-slider {
+    background: url("../_images/scareface.jpg") no-repeat;
+}
+
+.fifth-slider {
+    background: url("../_images/serpico.jpg") no-repeat;
+}
 
 
 
