@@ -16,3 +16,5 @@ http://www.hongkiat.com/blog/css-priority-level/
 
     http://localhost:63342/camelMoviesClient/assets/_images/scareface.jpg
     http://localhost:63342/camelMoviesClient/assets/_images/avangers.jpg
+
+    git remote set-url origin  https://github.com/maciejkamela/moviesClient.git
