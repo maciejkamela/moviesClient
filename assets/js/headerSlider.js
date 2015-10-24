@@ -5,14 +5,18 @@ app.headerSlider = (function () {
 
             init: function () {
                 //this.slideMovie(this.properties.$leftArrow);
-                this.previousMovie(this.properties.$rightArrow);
+                //this.previousMovie(this.properties.$rightArrow);
                 this.properties.moviesAmount = this.properties.movies.length;
                 this.createImageLiElement();
                 this.slideNext();
+                this.slidePrevious();
+                //this.showSliderArrows();
+                //this.hideSlideArrow();
+                this.toggleSliding();
             },
             properties: {
                 imgPath: './assets/_images/',
-                movies: ['avangers.jpg', 'carlitosway.jpg', 'godfather.jpg', 'scareface.jpg', 'serpico.jpg', 'kamel.jpg'],
+                movies: ['brasco.jpg','avengers.jpg', 'carlitosway.jpg', 'godfather.jpg', 'scareface.jpg', 'serpico.jpg', 'kamel.jpg', 'goodFellas.jpg'],
                 currentMovie: 0,
                 $leftArrow: $('.poster-nav-left-arrow'),
                 $rightArrow: $('.poster-nav-right-arrow')
@@ -40,7 +44,10 @@ app.headerSlider = (function () {
                     $windowWidth = $(window).width();
                 this.properties.$leftArrow.on('click', function () {
                     if (self.properties.currentMovie < (moviesAmount - 1)) {
-                        $(liItems[self.properties.currentMovie]).css({left: -$windowWidth + 'px', width: 0 + 'px',backgroundSize: 'cover'});
+                        $(liItems[self.properties.currentMovie]).css({
+                            left: -$windowWidth * (self.properties.currentMovie + 1) + 'px',
+                            width: 0 + 'px'
+                        });
                         self.properties.currentMovie++;
                     } else if (self.properties.currentMovie === moviesAmount - 1) {
                         for (var i = 0; i < moviesAmount; i++) {
@@ -49,23 +56,46 @@ app.headerSlider = (function () {
                         self.properties.currentMovie = 0;
                     }
                 })
-
-
             },
-            previousMovie: function (arrow) {
-                var mainPoster = $('.main-poster'),
+            slidePrevious: function () {
+                var $ul = $('.image-slider'),
+                    liItems = $ul.children(),
                     self = this,
-                    moviesAmount = self.properties.movies.length;
-                arrow.on('click', function () {
+                    moviesAmount = this.properties.movies.length,
+                    $windowWidth = $(window).width();
+                this.properties.$rightArrow.on('click', function () {
+                    console.log(self.properties.currentMovie);
                     if (self.properties.currentMovie === 0) {
                         self.properties.currentMovie = moviesAmount - 1;
-                        mainPoster.css({backgroundImage: 'url(' + self.properties.imgPath + self.properties.movies[self.properties.currentMovie] + ')'});
+                        for (var i = 0; i < moviesAmount; i++) {
+                            $(liItems[i]).css({left: $windowWidth * (moviesAmount - i) + 'px', width: 0 + 'px'});
+                        }
+                        $(liItems[self.properties.currentMovie]).css({
+                            left: 0 + 'px',
+                            width: $windowWidth + 'px',
+                            backgroundSize: 'cover'
+                        });
                     } else {
+                        console.log('else' + self.properties.currentMovie);
                         self.properties.currentMovie--;
-                        mainPoster.css({backgroundImage: 'url(' + self.properties.imgPath + self.properties.movies[self.properties.currentMovie] + ')'});
+                        $(liItems[self.properties.currentMovie]).css({left: 0 + 'px', width: $windowWidth + 'px'});
                     }
-                });
+                })
             },
+            //previousMovie: function (arrow) {
+            //    var mainPoster = $('.main-poster'),
+            //        self = this,
+            //        moviesAmount = self.properties.movies.length;
+            //    arrow.on('click', function () {
+            //        if (self.properties.currentMovie === 0) {
+            //            self.properties.currentMovie = moviesAmount - 1;
+            //            mainPoster.css({backgroundImage: 'url(' + self.properties.imgPath + self.properties.movies[self.properties.currentMovie] + ')'});
+            //        } else {
+            //            self.properties.currentMovie--;
+            //            mainPoster.css({backgroundImage: 'url(' + self.properties.imgPath + self.properties.movies[self.properties.currentMovie] + ')'});
+            //        }
+            //    });
+            //},
             createImageLiElement: function () {
                 var self = this,
                     $imageSlider,
@@ -75,13 +105,29 @@ app.headerSlider = (function () {
                 for (var i = 0; i < this.properties.moviesAmount; i++) {
                     $li = $('<li>').css({
                         backgroundImage: 'url(' + self.properties.imgPath + self.properties.movies[i] + ')',
-                        width: $(window).width(),backgroundSize: 'cover'
-                    });
+                        width: $(window).width(), backgroundSize: 'cover'
+                    }).addClass('poster');
                     $imageSlider.append($li);
-
-                    //console.log("created" + i + "element", this.properties.movies[i]);
                 }
                 $('.slider').append($imageSlider);
+            },
+            showliderArrows: function () {
+                $('.slider').on('mouseenter',function (event) {
+                    event.stopPropagation();
+                    $('.poster-nav-arrow').css({display:"block"});
+                })
+            },
+            hidelideArrow: function () {
+                $('.slider').mouseleave(function () {
+                    $('.poster-nav-arrow').css({display:"none"});
+                })
+            },
+            toggleSliding: function () {
+                $('.slider').hover(function () {
+                   $('.poster').css("-webkit-animation-play-state", "paused");
+                }, function () {
+                    $('.poster').css("-webkit-animation-play-state", "running");
+                })
             }
         };
     }()

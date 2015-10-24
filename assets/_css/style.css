@@ -183,12 +183,14 @@ header {
     color: rgba(234, 231, 231, 0.4);
     font-size: 50px;
     margin-top: -1.5em;
+    display: inline;
 }
 
 .poster-nav-left-arrow {
     float: left;
     margin-left: 20px;
     margin-top: -3em;
+
 }
 
 .poster-nav-right-arrow {
@@ -206,8 +208,9 @@ header {
     /*overflow: hidden;*/
     padding: 0;
     left: 0;
+    /*animation: cycle 1s ease;*/
     /*animation-name: slideInLeft;*/
-    /*animation-duration: 5s;*/
+    /*/!*animation-duration: 5s;*!/*/
 }
 
 .image-slider li {
@@ -215,53 +218,34 @@ header {
     float: left;
     list-style: none;
     left: 0;
-    height: 450px;
+    height: 500px;
     background-size: cover;
-    transition: all 1s linear;
-    /*transition-property: left;*/
-    /*transition-duration: 10s;*/
-    /*transition-timing: ease;*/
-    /*transition-delay: 0;*/
-    /*animation-name: slideInLeft;*/
-    /*animation-duration: 5s;*/
-    /*transition-timing-function: linear, ease-in;*/
-    /*/!*overflow: hidden;*!/*/
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transition:  opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    -ms-transition: opacity 0.5s ease-out;
+    /* Slow */
+    /*-webkit-animation: slideShow 40s linear infinite;*/
+    -moz-animation:    slideShow 40s linear infinite;
 }
 
-.first-slider {
-    background: url("../_images/carlitosway.jpg") no-repeat;
-}
-
-.second-slider {
-    background: url("../_images/godfather.jpg") no-repeat;
-}
-
-.third-slider {
-    background: url("../_images/kamel.jpg") no-repeat;
-}
-
-.fourth-slider {
-    background: url("../_images/scareface.jpg") no-repeat;
-}
-
-.fifth-slider {
-    background: url("../_images/serpico.jpg") no-repeat;
-}
-
-@keyframes slideInLeft {
-    from {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-        visibility: visible;
+@-webkit-keyframes slideShow {
+    0%   {
+        -webkit-transform: translateX(0);
     }
-
-    to {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
+    100% {
+        -webkit-transform: translateX(-600%);
     }
 }
-
-
+@-moz-keyframes slideShow {
+    0%   {
+        -moz-transform:    translateX(0);
+    }
+    100% {
+        -moz-transform:    translateX(-600%);
+    }
+}
 
 
 
