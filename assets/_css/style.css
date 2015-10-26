@@ -205,12 +205,9 @@ header {
 
 .image-slider {
     position: relative;
-    /*overflow: hidden;*/
     padding: 0;
     left: 0;
-    /*animation: cycle 1s ease;*/
-    /*animation-name: slideInLeft;*/
-    /*/!*animation-duration: 5s;*!/*/
+    transition: 2s ease-out;
 }
 
 .image-slider li {
@@ -226,7 +223,7 @@ header {
     -webkit-transition: opacity 0.5s ease-out;
     -ms-transition: opacity 0.5s ease-out;
     /* Slow */
-    /*-webkit-animation: slideShow 40s linear infinite;*/
+    /*-webkit-animation: slideShow 50s linear infinite;*/
     -moz-animation:    slideShow 40s linear infinite;
 }
 

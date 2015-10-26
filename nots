@@ -26,3 +26,5 @@ http://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-we
 img w tablicy
 2. stworzyc dynamicznie tyle 'li' ze zdjeciami ile jest elementów img w tablicy i przypisac im odpowiedni background image i append do ul
 w image-slider
+
+przesuwaj caly slider

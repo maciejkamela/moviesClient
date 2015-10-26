@@ -37,29 +37,31 @@ app.headerSlider = (function () {
             //    });
             //},
             slideNext: function () {
-                var $ul = $('.image-slider'),
-                    liItems = $ul.children(),
+                var $slider = $('.image-slider'),
+                    liItems = $slider.children(),
                     self = this,
                     moviesAmount = this.properties.movies.length,
                     $windowWidth = $(window).width();
                 this.properties.$leftArrow.on('click', function () {
                     if (self.properties.currentMovie < (moviesAmount - 1)) {
-                        $(liItems[self.properties.currentMovie]).css({
-                            left: -$windowWidth * (self.properties.currentMovie + 1) + 'px',
-                            width: 0 + 'px'
+                        $slider.css({
+                            left: -$windowWidth * (self.properties.currentMovie + 1) + 'px'
                         });
                         self.properties.currentMovie++;
                     } else if (self.properties.currentMovie === moviesAmount - 1) {
-                        for (var i = 0; i < moviesAmount; i++) {
-                            $(liItems[i]).css({left: 0 + 'px', width: $windowWidth + 'px'});
-                        }
+                        //for (var i = 0; i < moviesAmount; i++) {
+                        //    $(liItems[i]).css({left: 0 + 'px', width: $windowWidth + 'px'});
+                        //}
+                        $slider.css({
+                            left: 0 + 'px'
+                        });
                         self.properties.currentMovie = 0;
                     }
                 })
             },
             slidePrevious: function () {
-                var $ul = $('.image-slider'),
-                    liItems = $ul.children(),
+                var $slider = $('.image-slider'),
+                    liItems = $slider.children(),
                     self = this,
                     moviesAmount = this.properties.movies.length,
                     $windowWidth = $(window).width();
