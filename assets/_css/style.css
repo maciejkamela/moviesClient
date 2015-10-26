@@ -207,7 +207,7 @@ header {
     position: relative;
     padding: 0;
     left: 0;
-    transition: 2s ease-out;
+    transition: 0.7s ease-out;
 }
 
 .image-slider li {
