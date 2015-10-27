@@ -10,6 +10,7 @@ app.mainView = (function () {
             this.getAllMovies();
             var slider = new app.Slider(this.data.$slider, this.data.movies, this.data.imgPath);
             slider.createImageLiElement();
+            slider.createArrows();
         },
         data: {
             $slider: $('.image-slider'),
