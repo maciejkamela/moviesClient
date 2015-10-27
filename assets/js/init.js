@@ -4,4 +4,4 @@
 var app = app || {};
 app.mainView.init();
 //app.headerSlider.init();
-app.createSlider.init();
+//app.createSlider.init();
