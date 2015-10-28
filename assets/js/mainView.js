@@ -8,7 +8,7 @@ app.mainView = (function () {
         init: function
             () {
             this.getAllMovies();
-            var slider = new app.Slider(this.data.$slider, this.data.movies, this.data.imgPath);
+            var slider = new app.Slider(this.data.$slider, this.data.movies, this.data.imgPath, this.data.currentMovie);
             slider.createImageLiElement();
             slider.createArrows();
         },
@@ -16,6 +16,7 @@ app.mainView = (function () {
             $slider: $('.image-slider'),
             imgAmount: 4,
             imgPath: './assets/_images/',
+            currentMovie: 0,
             movies: ['brasco.jpg', 'avengers.jpg', 'carlitosway.jpg', 'godfather.jpg', 'scareface.jpg', 'serpico.jpg', 'kamel.jpg', 'goodFellas.jpg']
         },
         getAllMovies: function () {
