@@ -6,44 +6,44 @@ app.Slider = function ($sliderContainer, imgCollection, imgPath, currentMovie) {
         this.imgAmount = imgCollection.length,
         this.imgPath = imgPath,
         this.currentMovie = currentMovie,
-        this.width = $sliderContainer.width();
+        this.width = $sliderContainer.width(),
+    this.$imageSlider = $('<ul>').addClass('image-slider');// czy to jest OK
 };
 
-app.Slider.prototype.createImageLiElement = function () {
+app.Slider.prototype.createSlider = function () {
     var img;
-    this.$sliderContainer.width($(window).width() * this.imgAmount);
+    this.$sliderContainer.append(this.$imageSlider);
+    this.$imageSlider.width(this.width * this.imgAmount);
     for (var i = 0; i < this.imgAmount; i++) {
         img = $('<li>').css({
             backgroundImage: 'url(' + this.imgPath + this.imgCollection[i] + ')',
-            width: $(window).width(), backgroundSize: 'cover'
+            width: this.width, backgroundSize: 'cover'
         }).addClass('poster');
-        this.$sliderContainer.append(img);
+        this.$imageSlider.append(img);
     }
 };
 app.Slider.prototype.slideNext = function () {
-    var $windowWidth = $(window).width();
     if (this.currentMovie < (this.imgAmount - 1)) {
         this.currentMovie++;
-        this.$sliderContainer.css({
-            left: -$windowWidth * this.currentMovie + 'px'
+        this.$imageSlider.css({
+            left: -this.width * this.currentMovie + 'px'
         });
     } else if (this.currentMovie === this.imgAmount - 1) {
-        this.$sliderContainer.css({
+        this.$imageSlider.css({
             left: 0 + 'px'
         });
         this.currentMovie = 0;
     }
 };
 app.Slider.prototype.slidePrevious = function () {
-    var $windowWidth = $(window).width();
     if (this.currentMovie === 0) {
         this.currentMovie = this.imgAmount - 1;
-        this.$sliderContainer.css({
-            left: -$windowWidth * this.currentMovie + 'px'
+        this.$imageSlider.css({
+            left: -this.width * this.currentMovie + 'px'
         });
     } else {
         this.currentMovie--;
-        this.$sliderContainer.css({left: -$windowWidth * this.currentMovie + 'px'});
+        this.$imageSlider.css({left: -this.width * this.currentMovie + 'px'});
     }
 };
 app.Slider.prototype.createArrows = function () {
@@ -51,7 +51,7 @@ app.Slider.prototype.createArrows = function () {
         self = this,
         leftArrow = $('<div>').addClass('glyphicon glyphicon-chevron-left poster-nav-left-arrow'),
         rightArrow = $('<div>').addClass('glyphicon glyphicon-chevron-right poster-nav-right-arrow');
-    $('body').append(arrowContainer);
+    this.$sliderContainer.append(arrowContainer);
     arrowContainer.append(leftArrow, rightArrow);
     leftArrow.on('click', function () {
         self.slideNext();

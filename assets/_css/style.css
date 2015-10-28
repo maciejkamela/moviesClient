@@ -208,6 +208,16 @@ header {
     padding: 0;
     left: 0;
     transition: 0.7s ease-out;
+    width: 100%;
+}
+
+.small-slider {
+    position: relative;
+    padding: 0;
+    left: 0;
+    transition: 0.7s ease-out;
+    width: 1920px;
+    height: 200px;
 }
 
 .image-slider li {
