@@ -1,4 +1,5 @@
 'use strict';
+/*global window */
 var app = app || {};
 app.headerSlider = (function () {
         return {

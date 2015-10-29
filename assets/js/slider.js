@@ -1,12 +1,12 @@
 'use strict';
-
+var app = app || {};
 app.Slider = function ($sliderContainer, imgCollection, imgPath, currentMovie) {
-    this.$sliderContainer = $sliderContainer,
-        this.imgCollection = imgCollection,
-        this.imgAmount = imgCollection.length,
-        this.imgPath = imgPath,
-        this.currentMovie = currentMovie,
-        this.width = $sliderContainer.width(),
+    this.$sliderContainer = $sliderContainer;
+        this.imgCollection = imgCollection;
+        this.imgAmount = imgCollection.length;
+        this.imgPath = imgPath;
+        this.currentMovie = currentMovie;
+        this.width = $sliderContainer.width();
     this.$imageSlider = $('<ul>').addClass('image-slider');// czy to jest OK
 };
 
@@ -54,11 +54,11 @@ app.Slider.prototype.createArrows = function () {
     this.$sliderContainer.append(arrowContainer);
     arrowContainer.append(leftArrow, rightArrow);
     leftArrow.on('click', function () {
-        self.slideNext();
+        self.slidePrevious();
     });
     rightArrow.on('click', function () {
-        self.slidePrevious();
-    })
+        self.slideNext();
+    });
 };
 
 

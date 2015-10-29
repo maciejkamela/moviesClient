@@ -2,6 +2,7 @@
  * Created by camel on 2015-10-14.
  */
 'use strict';
+/*global window */
 var app = app || {};
 app.mainView = (function () {
     return {
@@ -34,5 +35,5 @@ app.mainView = (function () {
             currentMovie: 0,
             movies: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
         }
-    }
+    };
 }());
