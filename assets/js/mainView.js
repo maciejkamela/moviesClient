@@ -13,9 +13,9 @@ app.mainView = (function () {
             slider.createSlider();
             slider.createArrows();
 
-            var sliderek = new app.Slider(this.data2.$slider, this.data2.movies, this.data2.imgPath, this.data2.currentMovie);
-            sliderek.createSlider();
-            sliderek.createArrows();
+            //var sliderek = new app.Slider(this.data2.$slider, this.data2.movies, this.data2.imgPath, this.data2.currentMovie);
+            //sliderek.createSlider();
+            //sliderek.createArrows();
         },
         data: {
             $slider: $('.slider'),

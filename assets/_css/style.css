@@ -190,7 +190,6 @@ header {
     float: left;
     margin-left: 20px;
     margin-top: -3em;
-
 }
 
 .poster-nav-right-arrow {
@@ -211,6 +210,7 @@ header {
     transition: 0.7s ease-out;
     width: 100%;
     height: 100%;
+    z-index: 0;
 }
 
 .small-slider {
@@ -231,14 +231,14 @@ header {
     left: 0;
     height: 100%;
     background-size: cover;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transition:  opacity 0.5s ease-out;
-    -o-transition: opacity 0.5s ease-out;
-    -webkit-transition: opacity 0.5s ease-out;
-    -ms-transition: opacity 0.5s ease-out;
-    /* Slow */
-    /*-webkit-animation: slideShow 50s linear infinite;*/
-    -moz-animation:    slideShow 40s linear infinite;
+    /*-webkit-transform: translate3d(0, 0, 0);*/
+    /*-moz-transition:  opacity 0.5s ease-out;*/
+    /*-o-transition: opacity 0.5s ease-out;*/
+    /*-webkit-transition: opacity 0.5s ease-out;*/
+    /*-ms-transition: opacity 0.5s ease-out;*/
+    /*/!* Slow *!/*/
+    /*/!*-webkit-animation: slideShow 50s linear infinite;*!/*/
+    /*-moz-animation:    slideShow 40s linear infinite;*/
 }
 
 @-webkit-keyframes slideShow {
@@ -258,13 +258,45 @@ header {
     }
 }
 
-
-
-
-
-
-
-
+.recommended-movies {
+    width: 80%;
+    height: 600px;
+    background: #FDD564;
+    position: relative;
+    z-index: 2;
+    top: -50px;
+}
+.recommended-movies-title {
+    float: left;
+    color: black;
+    font-size: 30px;
+    margin-left: 300px;
+    margin-top: 30px;
+    line-height: 80px;
+    text-align: center;
+    font-family: 'Josefin', cursive;
+    font-weight: 100;
+    height: 80px;
+}
+.recommended-movies-items {
+    border: red solid 1px;
+    width: 100%;
+    height: 60%;
+    position: relative;
+    top:20%;
+}
+.recommended-poster {
+    background-image: url("../_posters/1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    z-index: 0;
+    box-sizing: border-box;
+    margin-left: 0px;
+    padding: 0px;
+}
 
 
 
