@@ -1,55 +1,37 @@
 'use strict';
 var app = app || {};
-app.Slider = function ($posterContainer) {
+app.Poster = function ($posterContainer, postersCollection, postersPath,rating) {
     this.$posterContainer = $posterContainer;
-    this.$posters = $('<ul>').addClass('image-slider');// czy to jest OK
+    this.$posters = $('<ul>').addClass('recommended-movies-items');// czy to jest OK
+    this.postersCollection = postersCollection;
+    this.postersAmount = postersCollection.length;
+    this.postersPath = postersPath;
+    this.width = $posterContainer.width();
+    this.rating = rating;
 };
 
-app.Slider.prototype.createPosterContainer = function () {
-    var img;
+app.Poster.prototype.createPosterContainer = function () {
     this.$posterContainer.append(this.$posters);
-};
-app.Slider.prototype.slideNext = function () {
-    if (this.currentMovie < (this.imgAmount - 1)) {
-        this.currentMovie++;
-        this.$imageSlider.css({
-            left: -this.width * this.currentMovie + 'px'
-        });
-    } else if (this.currentMovie === this.imgAmount - 1) {
-        this.$imageSlider.css({
-            left: 0 + 'px'
-        });
-        this.currentMovie = 0;
+    var poster;
+    var $rating;
+    for (var i = 0; i < this.postersAmount; i++) {
+        poster =  $('<li>').css({
+            backgroundImage: 'url(' + this.postersPath + this.postersCollection[i] + ')',
+            width: Math.ceil(this.width/this.postersAmount),
+            backgroundSize: 'cover'
+        }).addClass('recommended-poster');
+        $rating = $('<div>').addClass('movie-rating').text(this.rating);
+        poster.append($rating);
+        this.$posters.append(poster);
     }
 };
-app.Slider.prototype.slidePrevious = function () {
-    if (this.currentMovie === 0) {
-        this.currentMovie = this.imgAmount - 1;
-        this.$imageSlider.css({
-            left: -this.width * this.currentMovie + 'px'
-        });
-    } else {
-        this.currentMovie--;
-        this.$imageSlider.css({left: -this.width * this.currentMovie + 'px'});
-    }
+app.Poster.prototype.zoomMovieRating = function () {
+    $(this.$posters, 'li').hover(function () {
+        $('.movie-rating').fadeTo('fast', '0.8');
+    }, function() {
+        $('.movie-rating').fadeTo('fast', '0.4');
+    } )
 };
-app.Slider.prototype.createArrows = function () {
-    var arrowContainer = $('<div>').addClass('poster-nav-arrow'),
-        self = this,
-        leftArrow = $('<div>').addClass('glyphicon glyphicon-chevron-left poster-nav-left-arrow'),
-        rightArrow = $('<div>').addClass('glyphicon glyphicon-chevron-right poster-nav-right-arrow');
-    this.$sliderContainer.append(arrowContainer);
-    arrowContainer.append(leftArrow, rightArrow);
-    leftArrow.on('click', function () {
-        self.slidePrevious();
-    });
-    rightArrow.on('click', function () {
-        self.slideNext();
-    });
-};
-
-
-
 
 
 

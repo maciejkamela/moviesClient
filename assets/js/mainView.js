@@ -9,31 +9,32 @@ app.mainView = (function () {
         init: function
             () {
             this.getAllMovies();
-            var slider = new app.Slider(this.data.$slider, this.data.movies, this.data.imgPath, this.data.currentMovie);
+            var slider = new app.Slider(this.sliderSettings.$slider, this.sliderSettings.movies, this.sliderSettings.imgPath, this.sliderSettings.currentMovie);
             slider.createSlider();
             slider.createArrows();
-
-            //var sliderek = new app.Slider(this.data2.$slider, this.data2.movies, this.data2.imgPath, this.data2.currentMovie);
-            //sliderek.createSlider();
-            //sliderek.createArrows();
+            var poster = new app.Poster(this.posterSettings.$posterContainer, this.posterSettings.postersCollection, this.posterSettings.posterPath, this.posterSettings.rating);
+            poster.createPosterContainer();
+            poster.zoomMovieRating();
         },
-        data: {
+        sliderSettings: {
             $slider: $('.slider'),
             imgPath: './assets/_images/',
             currentMovie: 0,
             movies: ['brasco.jpg', 'avengers.jpg', 'carlitosway.jpg', 'godfather.jpg', 'scareface.jpg', 'serpico.jpg', 'kamel.jpg', 'goodFellas.jpg']
+        },
+        posterSettings: {
+            $posterContainer: $('.recommended-movies'),
+            posterPath: './assets/_posters/',
+            currentMovie: 0,
+            postersCollection: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
+            rating: '5.0'
         },
         getAllMovies: function () {
             var displayMoviesBtn = $('.display-all-movies-btn');
             displayMoviesBtn.on('click', function () {
                 app.apiCalls.getAllData();
             });
-        },
-        data2: {
-            $slider: $('.small-slider'),
-            imgPath: './assets/_images/',
-            currentMovie: 0,
-            movies: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg']
         }
+
     };
 }());

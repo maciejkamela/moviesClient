@@ -18,7 +18,7 @@ app.Slider.prototype.createSlider = function () {
         img = $('<li>').css({
             backgroundImage: 'url(' + this.imgPath + this.imgCollection[i] + ')',
             width: this.width, backgroundSize: 'cover'
-        }).addClass('poster');
+        }).addClass('movie-slide');
         this.$imageSlider.append(img);
     }
 };
