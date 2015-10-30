@@ -15,6 +15,7 @@ app.mainView = (function () {
             var poster = new app.Poster(this.posterSettings.$posterContainer, this.posterSettings.postersCollection, this.posterSettings.posterPath, this.posterSettings.rating);
             poster.createPosterContainer();
             poster.zoomMovieRating();
+            poster.toggleMovieDetails();
         },
         sliderSettings: {
             $slider: $('.slider'),
