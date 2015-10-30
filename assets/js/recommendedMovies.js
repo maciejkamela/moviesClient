@@ -17,7 +17,7 @@ app.Poster.prototype.createPosterContainer = function () {
     for (var i = 0; i < this.postersAmount; i++) {
         poster =  $('<li>').css({
             backgroundImage: 'url(' + this.postersPath + this.postersCollection[i] + ')',
-            width: Math.ceil(this.width/this.postersAmount),
+            width: this.width/this.postersAmount,
             backgroundSize: 'cover'
         }).addClass('recommended-poster');
         $rating = $('<div>').addClass('movie-rating').text(this.rating);
@@ -26,10 +26,11 @@ app.Poster.prototype.createPosterContainer = function () {
     }
 };
 app.Poster.prototype.zoomMovieRating = function () {
-    $(this.$posters, 'li').hover(function () {
-        $('.movie-rating').fadeTo('fast', '0.8');
+    this.$posters.find('li').hover(function () {
+        console.log(this);
+        $(this).find('.movie-rating').fadeTo('fast', '0.8');
     }, function() {
-        $('.movie-rating').fadeTo('fast', '0.4');
+        $(this).find('.movie-rating').fadeTo('fast', '0.4');
     } )
 };
 

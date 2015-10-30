@@ -257,33 +257,29 @@ header {
         -moz-transform:    translateX(-600%);
     }
 }
-
 .recommended-movies {
     width: 70%;
-    height: 600px;
+    height: 537px;
     background: #FDD564;
     position: relative;
     z-index: 2;
-    top: -50px;
+    top: -100px;
 }
 .recommended-movies-title {
-    float: left;
     color: black;
     font-size: 30px;
-    margin-left: 300px;
-    margin-top: 30px;
+    margin-top: 8px;
     line-height: 80px;
     text-align: center;
     font-family: 'Josefin', cursive;
     font-weight: 100;
     height: 80px;
+    width: 100%;
 }
 .recommended-movies-items {
-    border: red solid 1px;
     width: 100%;
     height: 60%;
-    position: relative;
-    top:20%;
+    margin-top: 20px;
 }
 .recommended-poster {
     height: 100%;
@@ -299,8 +295,12 @@ header {
     height: 150px;
     width: 150px;
     opacity: 0.3;
-    top: 100px;
-    margin-left: 30px;
+    top: 85px;
+    margin: 0 auto;
+    line-height: 150px;
+    font-size: 30px;
+    font-weight: bold;
+
 }
 
 
