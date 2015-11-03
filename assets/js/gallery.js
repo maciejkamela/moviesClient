@@ -22,9 +22,9 @@ app.Gallery.prototype.createGallery = function () {
         $galleryItem = $('<li>').addClass('col-xs-12 col-sm-6 col-md-4 gallery-item');
         $figcaption.append($galleryItemText);
         $figureItem = $('<figure>').addClass('figure-item').append($figcaption);
-        $figureItem.css({
+        $galleryItem.css({
             backgroundImage: 'url(' + this.galleryPath + this.galleryCollection[i] + ')',
-            width: 100 + 'px'
+            width: this.$galleryIsotop / this.galleryAmount
         });
         $galleryItem.append($figureItem);
         this.$galleryIsotop.append($galleryItem);
