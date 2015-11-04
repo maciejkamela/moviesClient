@@ -32,7 +32,7 @@ app.Poster.prototype.zoomMovieRating = function () {
     }, function () {
         $(this).removeClass('zoom-movie');
         $(this).find('.movie-rating').fadeTo('fast', '0.4');
-    })
+    });
 };
 app.Poster.prototype.createMovieDetails = function () {
     var $detailsContainer = $('<div>').addClass('movie-details'),
@@ -49,22 +49,5 @@ app.Poster.prototype.createMovieDetails = function () {
 app.Poster.prototype.toggleMovieDetails = function () {
     this.$posters.find('li').hover(function () {
         $(this).find('.movie-details').slideToggle('fast');
-    })
+    });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
