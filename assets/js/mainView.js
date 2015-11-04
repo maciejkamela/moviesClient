@@ -8,7 +8,7 @@ app.mainView = (function () {
     return {
         init: function
             () {
-            this.getAllMovies();
+            //app.apiCalls.getAllTitles();
             var slider = new app.Slider(this.sliderSettings.$slider, this.sliderSettings.movies, this.sliderSettings.imgPath, this.sliderSettings.currentMovie);
             slider.createSlider();
             slider.createArrows();
@@ -21,7 +21,6 @@ app.mainView = (function () {
             var gallery = new app.Gallery(this.gallerySettings.$galleryContainer, this.gallerySettings.galleryCollection, this.gallerySettings.galleryPath, this.gallerySettings.backgrounds);
             gallery.createGallery();
             gallery.animateGalleryDetails();
-            //gallery.toggleGalleryDetails();
         },
         sliderSettings: {
             $slider: $('.slider'),

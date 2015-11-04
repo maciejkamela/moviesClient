@@ -16,7 +16,7 @@ app.apiCalls = (function () {
             xhttp.open("GET", "http://localhost:3000/movies", true);
             xhttp.send();
         },
-        getAllData: function () {
+        getAllTitles: function () {
             var url = 'http://localhost:3000/movies';
             $.get(url, function (responseData) {
                 console.log(responseData);

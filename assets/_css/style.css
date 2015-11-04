@@ -55,7 +55,10 @@ table {
 /*
 My style
 */
-
+@font-face {
+    font-family: galleryItemDetails;
+    src: url("../_fonts/PlayfairDisplaySC-Regular.ttf")
+}
 html, body {
     text-align: center;
     margin: 0;
@@ -261,7 +264,7 @@ header {
     background: #FDD564;
     position: relative;
     z-index: -2;
-    top: -100px;
+
 }
 .recommended-movies-title {
     color: black;
@@ -274,11 +277,12 @@ header {
     height: 80px;
     width: 100%;
     text-transform: uppercase;
+    border-bottom: solid 1px #B4B0B1;
 }
 .recommended-movies-items {
     width: 100%;
-    height: 60%;
-    margin-top: 140px;
+    height: 50%;
+    margin-top: 20px;
 }
 .recommended-poster {
     height: 100%;
@@ -292,13 +296,13 @@ header {
     background: white;
     position: relative;
     z-index: 5;
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
     opacity: 0.3;
     top: 85px;
     margin: 0 auto;
     line-height: 150px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 900;
     font-family: 'Merriweather', cursive;
     -webkit-transition: all .2s ease-in-out;
@@ -318,14 +322,13 @@ header {
     width: 100%;
     height: 145px;
     position: relative;
-    top: 170px;
+    top: 118px;
     z-index: 0;
     background: #4C4145;
     display: none;
     -webkit-box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
     -moz-box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
     box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
-
 }
 .movie-duration, .movie-category, .movie-comments {
     color: #B4B0B1;
@@ -333,7 +336,7 @@ header {
     margin-bottom: 10px;
     text-align: left;
     padding: 7px;
-    font-size: 15px;
+    font-size: 13px;
     font-family: 'Merriweather', cursive;
 }
 
@@ -346,15 +349,9 @@ header {
 .gallery-container {
     position: relative;
 }
-.gallery-wrapper {
-
-}
-.gallery-isotop {
-
-}
 
 .gallery-item {
-    height: 200px;
+    height: 345px;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -364,7 +361,7 @@ header {
 
 .gallery-item figure {
     width: 100%;
-    height: 200px;
+    height: 345px;
 }
 
 .gallery-item figure img {
@@ -378,7 +375,7 @@ header {
     /*border: 3px blue solid;*/
     position: absolute;
     width: 87%;
-    height: 80%;
+    height: 83%;
     margin-left: 15px;
     top: 11px;
     box-sizing : border-box;
@@ -389,12 +386,18 @@ header {
     transition: all 0.3s ease;
 }
 
-.gallery-item-details span {
-    color: yellow;
-    font-size: 16px;
+.gallery-item-details .gallery-details-text{
+    color: white;
+    font-size: 12px;
     margin-top:50px;
-    height: 90px;
-    line-height: 90px;
+    height: 200px;
+    line-height: 200px;
+    border-bottom: solid 1px white;
+    border-top: solid 1px white;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    text-transform: uppercase;
+    font-family: galleryItemDetails;
 }
 
 .animate {
@@ -402,4 +405,15 @@ header {
     -moz-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
+}
+.gallery-details-footer {
+    display: block;
+    position: absolute;
+    bottom: 35px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    left: 0;
+    right: 0;
+
 }

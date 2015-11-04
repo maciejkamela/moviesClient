@@ -30,9 +30,9 @@ app.Gallery.prototype.createGallery = function () {
 
 app.Gallery.prototype.createDetails = function (index) {
     var $movieDetails = $('<div>').addClass('gallery-item-details');
-    var $textSpan = $('<span>');
+    var $textSpan = $('<span>').addClass('gallery-details-text');
     $textSpan.text('jakis demo text');
-    $movieDetails.append($textSpan);
+    $movieDetails.append($textSpan, this.createDetailsFooter());
     $movieDetails.css({
         backgroundColor: this.background[index]
     });
@@ -59,6 +59,16 @@ app.Gallery.prototype.animateGalleryDetails = function () {
     });
 };
 
+app.Gallery.prototype.createDetailsFooter = function () {
+    var $footer = $('<span>').addClass('gallery-details-footer'),
+        $like = $('<span>').addClass('gallery-details-likes').attr('title', 'Like it'),
+        heart = $('<i>').addClass('fa fa-heart heart'),
+        $likeCount = $('<span>').addClass('gallery-details-like-count').text('69');
+
+    $like.append(heart, $likeCount);
+    $footer.append($like);
+    return $footer;
+};
 
 
 
