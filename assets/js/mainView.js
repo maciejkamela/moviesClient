@@ -20,6 +20,7 @@ app.mainView = (function () {
 
             var gallery = new app.Gallery(this.gallerySettings.$galleryContainer, this.gallerySettings.galleryCollection, this.gallerySettings.galleryPath, this.gallerySettings.backgrounds);
             gallery.createGallery();
+            gallery.animateGalleryDetails();
             //gallery.toggleGalleryDetails();
         },
         sliderSettings: {

@@ -362,24 +362,28 @@ header {
 .gallery-item figure {
     width: 100%;
     height: 200px;
-
 }
 
 .gallery-item figure img {
-    border: 3px red solid;
+    /*border: 3px red solid;*/
     width: 100%;
     height: 87%;
     object-fit: cover;
     margin: 5px;
 }
 .gallery-item-details {
-    border: 3px blue solid;
+    /*border: 3px blue solid;*/
     position: absolute;
     width: 87%;
     height: 80%;
     margin-left: 15px;
     top: 11px;
     box-sizing : border-box;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    transition: all 0.3s ease;
 }
 
 .gallery-item-details span {
@@ -390,3 +394,9 @@ header {
     line-height: 90px;
 }
 
+.animate {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}

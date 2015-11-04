@@ -34,23 +34,30 @@ app.Gallery.prototype.createDetails = function (index) {
     $textSpan.text('jakis demo text');
     $movieDetails.append($textSpan);
     $movieDetails.css({
-        display: "block",
         backgroundColor: this.background[index]
     });
+    //this.toggleGalleryDetails($movieDetails);
     return $movieDetails;
-
 };
 
-app.Poster.prototype.toggleGalleryDetails = function (index) {
+//app.Gallery.prototype.toggleGalleryDetails = function () {
+//    this.$galleryIsotop.find('li').hover(function () {
+//        $(this).find('.gallery-item-details').css({
+//            //backgroundColor: this.background[index]
+//            backgroundColor: "rgba(255, 193, 102, 0.85)"
+//        }).fadeIn(500);
+//    }, function () {
+//        $(this).find('.gallery-item-details').fadeOut(500);
+//    });
+//};
+
+app.Gallery.prototype.animateGalleryDetails = function () {
     this.$galleryIsotop.find('li').hover(function () {
-        $(this).find('.gallery-item-details').css({
-            display: "block",
-            backgroundColor: this.background[index]
-        });
+        $(this).find('.gallery-item-details').addClass('animate')
+    }, function () {
+        $(this).find('.gallery-item-details').removeClass('animate')
     });
 };
-
-
 
 
 
