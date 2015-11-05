@@ -59,6 +59,7 @@ My style
     font-family: galleryItemDetails;
     src: url("../_fonts/PlayfairDisplaySC-Regular.ttf")
 }
+
 html, body {
     text-align: center;
     margin: 0;
@@ -224,7 +225,6 @@ header {
     overflow: hidden;
 }
 
-
 .image-slider li {
     position: relative;
     float: left;
@@ -243,21 +243,23 @@ header {
 }
 
 @-webkit-keyframes slideShow {
-    0%   {
+    0% {
         -webkit-transform: translateX(0);
     }
     100% {
         -webkit-transform: translateX(-600%);
     }
 }
+
 @-moz-keyframes slideShow {
-    0%   {
-        -moz-transform:    translateX(0);
+    0% {
+        -moz-transform: translateX(0);
     }
     100% {
-        -moz-transform:    translateX(-600%);
+        -moz-transform: translateX(-600%);
     }
 }
+
 .recommended-movies {
     width: 70%;
     height: 537px;
@@ -266,6 +268,7 @@ header {
     z-index: -2;
 
 }
+
 .recommended-movies-title {
     color: black;
     font-size: 30px;
@@ -279,11 +282,13 @@ header {
     text-transform: uppercase;
     border-bottom: solid 1px #B4B0B1;
 }
+
 .recommended-movies-items {
     width: 100%;
     height: 50%;
     margin-top: 20px;
 }
+
 .recommended-poster {
     height: 100%;
     position: relative;
@@ -291,6 +296,7 @@ header {
     z-index: 3;
     transition: 0.3s all ease;
 }
+
 .movie-rating {
     border-radius: 50%;
     background: white;
@@ -310,14 +316,16 @@ header {
     -o-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
 }
+
 .zoom-movie {
     -webkit-transform: scale(2);
     -moz-transform: scale(2);
     -o-transform: scale(2);
     transform: scale(1.1);
     position: relative;
-    z-index:10;
+    z-index: 10;
 }
+
 .movie-details {
     width: 100%;
     height: 145px;
@@ -326,10 +334,11 @@ header {
     z-index: 0;
     background: #4C4145;
     display: none;
-    -webkit-box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
-    -moz-box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
-    box-shadow: 0px 10px 63px 2px rgba(0,0,0,0.61);
+    -webkit-box-shadow: 0px 10px 63px 2px rgba(0, 0, 0, 0.61);
+    -moz-box-shadow: 0px 10px 63px 2px rgba(0, 0, 0, 0.61);
+    box-shadow: 0px 10px 63px 2px rgba(0, 0, 0, 0.61);
 }
+
 .movie-duration, .movie-category, .movie-comments {
     color: #B4B0B1;
     margin-left: 20px;
@@ -343,9 +352,11 @@ header {
 .movie-category {
     border-bottom: 1px solid #B4B0B1;
 }
+
 .clear {
     clear: both;
 }
+
 .gallery-container {
     position: relative;
 }
@@ -371,6 +382,7 @@ header {
     object-fit: cover;
     margin: 5px;
 }
+
 .gallery-item-details {
     /*border: 3px blue solid;*/
     position: absolute;
@@ -378,7 +390,7 @@ header {
     height: 83%;
     margin-left: 15px;
     top: 11px;
-    box-sizing : border-box;
+    box-sizing: border-box;
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
     -o-transform: scale(0);
@@ -386,10 +398,10 @@ header {
     transition: all 0.3s ease;
 }
 
-.gallery-item-details .gallery-details-text{
+.gallery-item-details .gallery-details-text {
     color: white;
     font-size: 12px;
-    margin-top:50px;
+    margin-top: 50px;
     height: 200px;
     line-height: 200px;
     border-bottom: solid 1px white;
@@ -406,6 +418,7 @@ header {
     -o-transform: scale(1);
     transform: scale(1);
 }
+
 .gallery-details-footer {
     display: block;
     position: absolute;
@@ -415,5 +428,19 @@ header {
     font-size: 16px;
     left: 0;
     right: 0;
+}
 
+.modal-content {
+    width: 400px;
+    height: 400px;
+}
+
+.modal-content img {
+    width: 100%;
+}
+
+.close {
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 25px;
 }

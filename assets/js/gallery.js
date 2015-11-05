@@ -23,7 +23,7 @@ app.Gallery.prototype.createGallery = function () {
         $galleryItem = $('<li>').addClass('col-xs-12 col-sm-6 col-md-4 gallery-item');
         $figcaption.append($galleryItemText);
         $figureItem = $('<figure>').addClass('figure-item').append('<img src =' + this.galleryPath + this.galleryCollection[i] + ' />', $figcaption);
-        $galleryItem.append(this.createDetails(i),$figureItem);
+        $galleryItem.append(this.createDetails(i), $figureItem, this.createGalleryModal('<img src =' + this.galleryPath + this.galleryCollection[i] + ' />'));
         this.$galleryIsotop.append($galleryItem);
     }
 };
@@ -40,22 +40,22 @@ app.Gallery.prototype.createDetails = function (index) {
     return $movieDetails;
 };
 
-//app.Gallery.prototype.toggleGalleryDetails = function () {
-//    this.$galleryIsotop.find('li').hover(function () {
-//        $(this).find('.gallery-item-details').css({
-//            //backgroundColor: this.background[index]
-//            backgroundColor: "rgba(255, 193, 102, 0.85)"
-//        }).fadeIn(500);
-//    }, function () {
-//        $(this).find('.gallery-item-details').fadeOut(500);
-//    });
-//};
+app.Gallery.prototype.toggleGalleryDetails = function () {
+    this.$galleryIsotop.find('li').hover(function () {
+        $(this).find('.gallery-item-details').css({
+            //backgroundColor: this.background[index]
+            backgroundColor: "rgba(255, 193, 102, 0.85)"
+        }).fadeIn(500);
+    }, function () {
+        $(this).find('.gallery-item-details').fadeOut(500);
+    });
+};
 
 app.Gallery.prototype.animateGalleryDetails = function () {
     this.$galleryIsotop.find('li').hover(function () {
-        $(this).find('.gallery-item-details').addClass('animate')
+        $(this).find('.gallery-item-details').addClass('animate');
     }, function () {
-        $(this).find('.gallery-item-details').removeClass('animate')
+        $(this).find('.gallery-item-details').removeClass('animate');
     });
 };
 
@@ -70,8 +70,26 @@ app.Gallery.prototype.createDetailsFooter = function () {
     return $footer;
 };
 
+app.Gallery.prototype.createGalleryModal = function (background) {
+    var $modal = $('<div>').addClass('modal fade').attr({id: "myModal", role: "dialog"}),
+        $modalDialog = $('<div>').addClass('modal-dialog'),
+        $modalContent = $('<div>').addClass('modal-content'),
+        $modalFooter = $('<div>').addClass('modal-footer'),
+        $closeBtn = $('<button>').addClass('close').attr({'data-dismiss': 'modal'}).text('X');
+    $modalContent.append($closeBtn, background, $modalFooter);
+    $modalDialog.append($modalContent);
+    $modal.append($modalDialog);
 
+    return $modal;
+};
 
+app.Gallery.prototype.displayModal = function () {
+    this.$galleryIsotop.find('li').on('click', function () {
+        $(this).find('.gallery-item-details').attr({"data-toggle": "modal", "data-target": "#myModal"});
+        console.log($(this));
+    });
+    console.log(this.$galleryIsotop.find('li'));
+};
 
 
 
