@@ -17,7 +17,7 @@ app.Poster.prototype.createPosterContainer = function () {
     for (var i = 0; i < this.postersAmount; i++) {
         poster = $('<li>').css({
             backgroundImage: 'url(' + this.postersPath + this.postersCollection[i] + ')',
-            width: this.width / this.postersAmount,
+            width: (this.width / this.postersAmount) - 2,
             backgroundSize: 'cover'
         }).addClass('recommended-poster');
         $rating = $('<div>').addClass('movie-rating').text(this.rating);
