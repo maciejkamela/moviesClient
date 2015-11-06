@@ -23,7 +23,7 @@ app.Gallery.prototype.createGallery = function () {
         $galleryItem = $('<li>').addClass('col-xs-12 col-sm-6 col-md-4 gallery-item');
         $figcaption.append($galleryItemText);
         $figureItem = $('<figure>').addClass('figure-item').append('<img src =' + this.galleryPath + this.galleryCollection[i] + ' />', $figcaption);
-        $galleryItem.append(this.createDetails(i), $figureItem, this.createGalleryModal('<img src =' + this.galleryPath + this.galleryCollection[i] + ' />'));
+        $galleryItem.append(this.createDetails(i), $figureItem, this.createGalleryModal(i,'<img src =' + this.galleryPath + this.galleryCollection[i] + ' />'));
         this.$galleryIsotop.append($galleryItem);
     }
 };
@@ -70,8 +70,8 @@ app.Gallery.prototype.createDetailsFooter = function () {
     return $footer;
 };
 
-app.Gallery.prototype.createGalleryModal = function (background) {
-    var $modal = $('<div>').addClass('modal fade').attr({id: "myModal", role: "dialog"}),
+app.Gallery.prototype.createGalleryModal = function (modalId,background) {
+    var $modal = $('<div>').addClass('modal fade').attr({id: "myModal" + modalId, role: "dialog"}),
         $modalDialog = $('<div>').addClass('modal-dialog'),
         $modalContent = $('<div>').addClass('modal-content'),
         $modalFooter = $('<div>').addClass('modal-footer'),
@@ -85,17 +85,6 @@ app.Gallery.prototype.createGalleryModal = function (background) {
 
 app.Gallery.prototype.displayModal = function () {
     this.$galleryIsotop.find('li').on('click', function () {
-        $(this).find('.gallery-item-details').attr({"data-toggle": "modal", "data-target": "#myModal"});
-        console.log($(this));
+        $(this).find('.gallery-item-details').attr({"data-toggle": "modal", "data-target": "#myModal" + $(this).index()});
     });
-    console.log(this.$galleryIsotop.find('li'));
 };
-
-
-
-
-
-
-
-
-
